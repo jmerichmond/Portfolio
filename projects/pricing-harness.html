@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jamie Richmond — Pricing Experiment Harness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="../assets/career.css" />
+<link rel="stylesheet" href="../assets/projects.css" />
+<script>
+(function(){
+  var T={'white-velvet':['#E8E4D3','#A84D2C','#5B757C'],'radiohead':['#E3E1D4','#7A7440','#5E7375'],'mr-morale':['#E4DACE','#915C3F','#8A6F63'],'colour-in-anything':['#ECEFF4','#4A6383','#8296AE'],'gnx':['#F1F1F1','#42474C','#838D96']};
+  function buildFav(t,s){var c=T[t]||T['white-velvet'];var y=s?c[2]:c[1],d=s?c[1]:c[2];
+    var sv="<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='13' fill='"+c[0]+"'/><g font-family='Didot, \"Bodoni MT\", \"Times New Roman\", Georgia, serif' font-weight='500'><text x='25' y='47' text-anchor='middle' font-size='46' fill='"+d+"'>J</text><text x='41' y='47' text-anchor='middle' font-size='46' fill='"+y+"'>R</text></g></svg>";
+    return 'data:image/svg+xml,'+encodeURIComponent(sv);}
+  try{
+    var d=document.documentElement,ls=localStorage,p=new URLSearchParams(location.search);
+    function pick(q,k,valid,fb){var v=p.get(q);if(v&&valid.indexOf(v)>=0){ls.setItem(k,v);return v;}v=ls.getItem(k);return (v&&valid.indexOf(v)>=0)?v:fb;}
+    var theme=pick('theme','jr-theme',['white-velvet','radiohead','mr-morale','colour-in-anything','gnx'],'white-velvet');
+    var bg=pick('bg','jr-bg',['solid','grain','watercolour'],(ls.getItem('jr-bg')==='textured'?'grain':'solid'));
+    var tags=pick('tags','jr-tags',['outline','solid'],'outline');
+    var sw=p.get('swap');if(sw==='1'||sw==='0')ls.setItem('jr-swap',sw);
+    var swap=ls.getItem('jr-swap')==='1';
+    d.dataset.theme=theme;d.dataset.bg=bg;d.dataset.tags=tags;
+    if(swap)d.dataset.swap='1';else d.removeAttribute('data-swap');
+    var link=document.querySelector("link[rel='icon']")||document.head.appendChild(Object.assign(document.createElement('link'),{rel:'icon'}));
+    link.href=buildFav(theme,swap);
+    window.__jrFavicon=function(t,s){link.href=buildFav(t,s);};
+  }catch(e){}
+})();
+</script>
+</head>
+<body>
+<header class="topbar" id="topbar">
+  <a href="../index.html" class="mark">Jamie Richmond</a>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../index.html#log">Log</a>
+    <a href="mailto:jamie@jmerichmond.dev" class="hide-sm">Email</a>
+  </nav>
+</header>
+<main id="top">
+  <section class="proj-hero" data-screen-label="Project 06">
+    <div class="wrap">
+      <div class="crumb reveal">
+        <a href="index.html">Selected Work</a><span class="sep">/</span><span>06</span>
+      </div>
+      <h1 class="proj-title reveal">Pricing Experiment Harness</h1>
+      <p class="proj-sum reveal d1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="meta-rule rule"></div>
+      <div class="meta reveal d1">
+        <div><div class="mk">Role</div><div class="mv">Analyst, with product</div></div>
+        <div><div class="mk">Timeframe</div><div class="mv mono">2025</div></div>
+        <div><div class="mk">Stack</div><div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Bayesian A/B</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap reveal">
+    <div class="figure" data-motif="experiment"><span class="ph">Labore magna</span></div>
+  </section>
+
+  <section class="proj-body">
+    <div class="wrap">
+      <div class="block reveal">
+        <div class="block-label">The problem</div>
+        <div class="block-body">
+          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.</p>
+
+        </div>
+      </div>
+      <div class="block reveal">
+        <div class="block-label">What I did</div>
+        <div class="block-body">
+          <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+          <p class="note">Itaque earum rerum hic tenetur a sapiente delectus.</p>
+        </div>
+      </div>
+      <div class="block reveal">
+        <div class="block-label">Outcome</div>
+        <div class="block-body">
+          <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+
+        </div>
+      </div>
+      <div class="block reveal">
+        <div class="block-label">By the numbers</div>
+        <div class="block-body">
+          <div class="stats">
+        <div class="stat">
+          <div class="num">6<span class="u"></span></div>
+          <div class="sl">Aliquip commodo</div>
+        </div>
+        <div class="stat">
+          <div class="num">2<span class="u"></span></div>
+          <div class="sl">Lorem ipsum dolor</div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="proj-foot">
+      <a class="back" href="index.html">← All projects</a>
+      <a class="next" href="churn-early-warning.html">
+        <div class="nl">Next project — 01</div>
+        <div class="nt">Churn Early-Warning <span>↗</span></div>
+      </a>
+    </div>
+  </section>
+</main>
+<script src="../assets/career.js"></script>
+<script src="../assets/motifs.js"></script>
+
+<!-- Theme tweaks (palette · texture · accent swap) -->
+<div id="tweaks-root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="../assets/tweaks-panel.jsx"></script>
+<script type="text/babel" src="../assets/jr-tweaks.jsx"></script>
+</body>
+</html>

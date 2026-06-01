@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jamie Richmond — All Projects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="../assets/career.css" />
+<link rel="stylesheet" href="../assets/projects.css" />
+<script>
+(function(){
+  var T={'white-velvet':['#E8E4D3','#A84D2C','#5B757C'],'radiohead':['#E3E1D4','#7A7440','#5E7375'],'mr-morale':['#E4DACE','#915C3F','#8A6F63'],'colour-in-anything':['#ECEFF4','#4A6383','#8296AE'],'gnx':['#F1F1F1','#42474C','#838D96']};
+  function buildFav(t,s){var c=T[t]||T['white-velvet'];var y=s?c[2]:c[1],d=s?c[1]:c[2];
+    var sv="<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='13' fill='"+c[0]+"'/><g font-family='Didot, \"Bodoni MT\", \"Times New Roman\", Georgia, serif' font-weight='500'><text x='25' y='47' text-anchor='middle' font-size='46' fill='"+d+"'>J</text><text x='41' y='47' text-anchor='middle' font-size='46' fill='"+y+"'>R</text></g></svg>";
+    return 'data:image/svg+xml,'+encodeURIComponent(sv);}
+  try{
+    var d=document.documentElement,ls=localStorage,p=new URLSearchParams(location.search);
+    function pick(q,k,valid,fb){var v=p.get(q);if(v&&valid.indexOf(v)>=0){ls.setItem(k,v);return v;}v=ls.getItem(k);return (v&&valid.indexOf(v)>=0)?v:fb;}
+    var theme=pick('theme','jr-theme',['white-velvet','radiohead','mr-morale','colour-in-anything','gnx'],'white-velvet');
+    var bg=pick('bg','jr-bg',['solid','grain','watercolour'],(ls.getItem('jr-bg')==='textured'?'grain':'solid'));
+    var tags=pick('tags','jr-tags',['outline','solid'],'outline');
+    var sw=p.get('swap');if(sw==='1'||sw==='0')ls.setItem('jr-swap',sw);
+    var swap=ls.getItem('jr-swap')==='1';
+    d.dataset.theme=theme;d.dataset.bg=bg;d.dataset.tags=tags;
+    if(swap)d.dataset.swap='1';else d.removeAttribute('data-swap');
+    var link=document.querySelector("link[rel='icon']")||document.head.appendChild(Object.assign(document.createElement('link'),{rel:'icon'}));
+    link.href=buildFav(theme,swap);
+    window.__jrFavicon=function(t,s){link.href=buildFav(t,s);};
+  }catch(e){}
+})();
+</script>
+</head>
+<body>
+<header class="topbar" id="topbar">
+  <a href="../index.html" class="mark">Jamie Richmond</a>
+  <nav>
+    <a href="../index.html#work">Work</a>
+    <a href="../index.html#log">Log</a>
+    <a href="mailto:jamie@jmerichmond.dev" class="hide-sm">Email</a>
+  </nav>
+</header>
+<main id="top">
+  <section class="gallery" data-screen-label="All Projects">
+    <div class="wrap">
+      <div class="crumb reveal">
+        <a href="../index.html">Jamie Richmond</a><span class="sep">/</span><span>All Projects</span>
+      </div>
+      <h1 class="proj-title reveal">Everything,<br>in order of caring.</h1>
+      <p class="proj-sum reveal d1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="gallery-grid">
+        <a class="gcard reveal" href="churn-early-warning.html">
+          <div class="gthumb" data-motif="churn"><span class="gn">01</span><span class="ph">Dolor sit amet</span></div>
+          <div class="gbody">
+            <h3>Churn Early-Warning <span class="arr">↗</span></h3>
+            <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">dbt</span><span class="tag">Looker</span></div>
+          </div>
+        </a>
+        <a class="gcard reveal" href="demand-forecasting.html">
+          <div class="gthumb" data-motif="forecast"><span class="gn">02</span><span class="ph">Consectetur elit</span></div>
+          <div class="gbody">
+            <h3>Demand Forecasting <span class="arr">↗</span></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="tags"><span class="tag">SQL</span><span class="tag">Prophet</span><span class="tag">Airflow</span><span class="tag">Tableau</span></div>
+          </div>
+        </a>
+        <a class="gcard reveal" href="marketing-mix.html">
+          <div class="gthumb" data-motif="mix"><span class="gn">03</span><span class="ph">Eiusmod tempor</span></div>
+          <div class="gbody">
+            <h3>Marketing Mix Readout <span class="arr">↗</span></h3>
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="tags"><span class="tag">R</span><span class="tag">Stan</span><span class="tag">BigQuery</span></div>
+          </div>
+        </a>
+        <a class="gcard reveal" href="metrics-layer.html">
+          <div class="gthumb" data-motif="lineage"><span class="gn">04</span><span class="ph">Labore magna</span></div>
+          <div class="gbody">
+            <h3>Self-Serve Metrics Layer <span class="arr">↗</span></h3>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <div class="tags"><span class="tag">dbt</span><span class="tag">SQL</span><span class="tag">Looker</span></div>
+          </div>
+        </a>
+        <a class="gcard reveal" href="monday-digest.html">
+          <div class="gthumb" data-motif="digest"><span class="gn">05</span><span class="ph">Aliqua veniam</span></div>
+          <div class="gbody">
+            <h3>The Monday Digest <span class="arr">↗</span></h3>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">HTML email</span></div>
+          </div>
+        </a>
+        <a class="gcard reveal" href="pricing-harness.html">
+          <div class="gthumb" data-motif="experiment"><span class="gn">06</span><span class="ph">Lorem ipsum</span></div>
+          <div class="gbody">
+            <h3>Pricing Experiment Harness <span class="arr">↗</span></h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Bayesian A/B</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="../assets/career.js"></script>
+<script src="../assets/motifs.js"></script>
+
+<!-- Theme tweaks (palette · texture · accent swap) -->
+<div id="tweaks-root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="../assets/tweaks-panel.jsx"></script>
+<script type="text/babel" src="../assets/jr-tweaks.jsx"></script>
+</body>
+</html>
